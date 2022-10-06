@@ -1,0 +1,42 @@
+body {
+}
+ul {
+  list-style-type: none;
+}
+.container {
+  position: relative;
+  width: 1302px;
+  height: 721px;
+
+  background: #ffffff;
+}
+.box{
+  box-sizing: border-box;
+
+
+width: 1247px;
+height: 98px;
+left: 23px;
+top: 205px;
+
+background: #F5F5F5;
+border: 1px solid #000000;
+}
+.clickk{
+  box-sizing: border-box;
+
+
+width: 1247px;
+height: 98px;
+left: 23px;
+top: 205px;
+
+background: #F5F5F5;
+border: 1px solid #000000;
+}
+.container{
+  padding: 0 20px;
+}
+button{
+  
+}
