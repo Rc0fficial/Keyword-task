@@ -1,7 +1,5 @@
 import React from "react";
-import content from "./Content"
-
-
+import content from "./Content";
 
 function Data() {
   return (
@@ -10,26 +8,23 @@ function Data() {
     </div>
   );
 }
-const result = Object.values(content.para.split(' '));
-// console.log(result);
-
+const result = Object.values(content.para.split(" "));
 let keywords = content.keywords;
-// console.log(keywords)
-
-const intersection = result.filter(element => keywords.includes(element));
-// console.log(intersection)
-
-
-
-
-// Create sample arrays variables.
-// const domainsArr1 = ["infinitbility", "aGuideHub", "SortoutCode"];
-// const domainsArr2 = ["notebility", "aGuideHub", "repairbility"];
-// To get common elements in new array use `filter()` method
-// Use `includes()` method to check string is available in array
-const filteredArray = keywords.filter(value => result.includes(value));
-console.log("filteredArray", filteredArray)
-// Expected 'filteredArray' [ 'aGuideHub' ]
-
+const matchedKeywords = [];
+keywords.forEach((kw) => {
+  return result.map((res, i) => {
+    if (res.toLowerCase() === kw.key.toLowerCase()) {
+      result[i] = res + `<button onclick="myFunction()">o</button>`;
+      matchedKeywords.push({
+        keyword: kw.key,
+        index: i,
+        description: kw.description,
+      });
+    }
+  });
+});
+const paraWithBtn = result.join(" ");
+console.log("paraWithBtn", paraWithBtn);
+console.log("matchedKeywords", matchedKeywords);
 
 export default Data;

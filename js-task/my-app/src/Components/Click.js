@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <div>
-      <div class="container">
+      <div className="container">
         <p>
           A listing page is the public view of a listing. It should be designed
           to display all relevant information about a listing.
@@ -22,7 +22,7 @@ export default function App() {
         <ul>
           <li>
             A should be displaying all the information <span> <input
-              class="form-check-input"
+              className="form-check-input"
               type="checkbox"
               value=""
               id="flexCheckIndeterminate"
