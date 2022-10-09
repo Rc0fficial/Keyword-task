@@ -1,10 +1,11 @@
 import React from "react";
 import content from "./Content";
+import Button from "./Button"
 
 function Data() {
   return (
     <div>
-      <div dangerouslySetInnerHTML={{ __html: content.para }} />
+      <div dangerouslySetInnerHTML={{ __html: paraWithBtn }} />
     </div>
   );
 }
