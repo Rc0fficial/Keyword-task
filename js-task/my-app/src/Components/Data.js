@@ -1,26 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import content from "./Content";
-// import Button from "./Button"
+import myFunction from "./Button";
 
 function Data() {
 
-  const [isShown, setIsShown] = useState(false);
 
-  const handleClick = (event) => {
-    // 👇️ toggle shown state
-    setIsShown((current) => !current);
 
-    // 👇️ or simply set it to true
-    // setIsShown(true);
-  };
 
-  let btnFunc =  <input
-  className="form-check-input"
-  type="checkbox"
-  value=""
-  id="flexCheckIndeterminate"
-  onClick={handleClick}
-/>
+  
+  
+
+
 
   return (
     <div>
@@ -28,15 +18,33 @@ function Data() {
     </div>
   );
 }
+
+let clickFunc = ()=> {<span  id="btnId" onClick={myFunction} class="checkbox">
+           <input class = "checkbox" type="checkbox"/>
+        </span>
+}
+
+const myFunction1 = () => {
+  var x = document.getElementById("btnId");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+};
+
 const result = Object.values(content.para.split(" "));
 let keywords = content.keywords;
 const matchedKeywords = [];
 keywords.forEach((kw) => {
   return result.map((res, i) => {
     if (res.toLowerCase() === kw.key.toLowerCase()) {
-      result[i] = res + `<span class="checkbox">
-      <input class = "checkbox" type="checkbox"/>
-    </span>`;
+      result[i] =
+        res +
+        `<span class="checkbox">
+           <input class = "checkbox" type="checkbox" onClick="${myFunction}" />
+           <div id="myDIV2">${kw.description}</div>
+        </span>`;
       matchedKeywords.push({
         keyword: kw.key,
         index: i,
@@ -45,6 +53,7 @@ keywords.forEach((kw) => {
     }
   });
 });
+
 const paraWithBtn = result.join(" ");
 console.log("paraWithBtn", paraWithBtn);
 console.log("matchedKeywords", matchedKeywords);

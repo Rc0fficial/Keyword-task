@@ -1,7 +1,10 @@
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
 
-
-let Button = ()=> {
-    <button>0</button>
-}
-
-export default Button;
+export default myFunction;
