@@ -11,6 +11,14 @@ export default function App() {
     // setIsShown(true);
   };
 
+ let btnFunc =  <input
+  className="form-check-input"
+  type="checkbox"
+  value=""
+  id="flexCheckIndeterminate"
+  onClick={handleClick}
+/>
+
   return (
     <div>
       <div className="container">
@@ -21,13 +29,7 @@ export default function App() {
         <p>Criteria:</p>
         <ul>
           <li>
-            A should be displaying all the information <span> <input
-              className="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckIndeterminate"
-              onClick={handleClick}
-            />
+            A should be displaying all the information <span> {btnFunc}
           </span> related to the listing
             that user has created.
           </li>

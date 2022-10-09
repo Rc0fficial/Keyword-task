@@ -17,6 +17,7 @@ let content = {
         description: "Facts provided or learned about something or someone.",
       },
       { key: "description", description: "Type something cool" },
+      { key: "owners", description: "Hi, I'm Arsalan!"}
     ],
   };
   export default content;
