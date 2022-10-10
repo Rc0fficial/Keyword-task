@@ -1,61 +1,50 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import { Button } from "bootstrap";
 import content from "./Content";
-import myFunction from "./Button";
+// import myFunction from "./Button";
 
 function Data() {
-
-
-
-
-  
-  
-
-
-
   return (
     <div>
-      <div dangerouslySetInnerHTML={{ __html: paraWithBtn }} />
+      <div
+        onClick={onClick}
+        dangerouslySetInnerHTML={{ __html: el.innerHTML }}
+      />
     </div>
   );
 }
 
-let clickFunc = ()=> {<span  id="btnId" onClick={myFunction} class="checkbox">
-           <input class = "checkbox" type="checkbox"/>
-        </span>
-}
-
-const myFunction1 = () => {
-  var x = document.getElementById("btnId");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+let onClick = function (e) {
+  if (e.target.nodeName !== "INPUT") {
+    return;
   }
+  e.target.parentNode.classList.toggle("box-show");
+ 
 };
 
-const result = Object.values(content.para.split(" "));
-let keywords = content.keywords;
-const matchedKeywords = [];
-keywords.forEach((kw) => {
-  return result.map((res, i) => {
-    if (res.toLowerCase() === kw.key.toLowerCase()) {
-      result[i] =
-        res +
-        `<span class="checkbox">
-           <input class = "checkbox" type="checkbox" onClick="${myFunction}" />
-           <div id="myDIV2">${kw.description}</div>
-        </span>`;
-      matchedKeywords.push({
-        keyword: kw.key,
-        index: i,
-        description: kw.description,
-      });
-    }
-  });
+
+
+const contentHtml = content.para;
+const keywords = content.keywords;
+
+const el = document.createElement("div");
+el.innerHTML = contentHtml;
+const listEl = el.getElementsByTagName("ul")[0];
+[...listEl.children].forEach((li) => {
+  let itemText = li.textContent;
+  const updatedText = itemText
+    .split(" ")
+    .map((word) => {
+      const matchedKeyWord = keywords.find((kw) => kw.key === word);
+      if (matchedKeyWord) {
+        word =word +
+          `<span class="checkbox"><input class= "checkbox" type="checkbox"/><div class="box">${matchedKeyWord.description}</div></span>`;
+      }
+      return word;
+    })
+    .join(" ");
+  li.innerHTML = updatedText;
 });
 
-const paraWithBtn = result.join(" ");
-console.log("paraWithBtn", paraWithBtn);
-console.log("matchedKeywords", matchedKeywords);
 
 export default Data;

@@ -29,7 +29,14 @@ export default function App() {
         <p>Criteria:</p>
         <ul>
           <li>
-            A should be displaying all the information <span> {btnFunc}
+            A should be displaying all the information <span> {btnFunc}  {isShown && (
+          <div className="clickk">
+            <p>Facts provided or learned about something or someone.</p>
+          </div>
+        )}
+
+        {/* 👇️ show component on click */}
+        {isShown}
           </span> related to the listing
             that user has created.
           </li>
@@ -62,23 +69,10 @@ export default function App() {
         </ul>
         
 
-        {isShown && (
-          <div className="clickk">
-            <p>Facts provided or learned about something or someone.</p>
-          </div>
-        )}
-
-        {/* 👇️ show component on click */}
-        {isShown}
+       
       </div>
     </div>
   );
 }
 
-function Box() {
-  return (
-    <div>
-      
-    </div>
-  );
-}
+
