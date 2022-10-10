@@ -43,6 +43,7 @@ border: 1px solid #000000;
 
 .checkbox input{
   position: relative;
+  margin-left: 5px;
 }
 .checkbox input::before{
   position: absolute;
