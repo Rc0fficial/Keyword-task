@@ -1,5 +1,5 @@
 // import React, { useState } from "react";
-import { Button } from "bootstrap";
+// import { Button } from "bootstrap";
 import content from "./Content";
 // import myFunction from "./Button";
 
@@ -14,13 +14,20 @@ function Data() {
   );
 }
 
+
+
+
 let onClick = function (e) {
   if (e.target.nodeName !== "INPUT") {
     return;
   }
+  if(e.target.parentNode.classList.contains('box-show')){
+    return ;
+  }
   e.target.parentNode.classList.toggle("box-show");
  
 };
+
 
 
 
@@ -37,8 +44,8 @@ const listEl = el.getElementsByTagName("ul")[0];
     .map((word) => {
       const matchedKeyWord = keywords.find((kw) => kw.key === word);
       if (matchedKeyWord) {
-        word =word +
-          `<span class="checkbox"><input class= "checkbox" type="checkbox"/><div class="box">${matchedKeyWord.description}</div></span>`;
+        word = word +
+          `<span class="checkbox"><input  class= "checkbox" type="checkbox"/><div class="box"><div class = "boxp">${matchedKeyWord.description}</div></div></span>`;
       }
       return word;
     })

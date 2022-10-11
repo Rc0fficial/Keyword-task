@@ -15,6 +15,7 @@ ul {
 }
 .box{
   box-sizing: border-box;
+  /* text-align: center; */
 
 display: none;
 width: 1247px;
@@ -25,7 +26,12 @@ top: 205px;
 background: #F5F5F5;
 border: 1px solid #000000;
 }
-.clickk{
+.boxp{
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+/* .clickk{
   box-sizing: border-box;
 
 
@@ -36,7 +42,7 @@ top: 205px;
 
 background: #F5F5F5;
 border: 1px solid #000000;
-}
+} */
 .container{
   padding: 0 20px;
 }
@@ -59,13 +65,30 @@ border: 1px solid #000000;
   cursor: pointer;
   transition: 0.3s all ease;
 }
+
+/* .checkbox input::after{
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  background-color: red;
+  border: 3px solid red;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: 0.3s all ease;
+} */
 .checkbox input:checked::before{
   background-color: red;
   border: 1px solid red;
 }
 .checkbox input:checked::after{
   position: absolute;
+  background-color: red;
   color: red;
+  
 }
 
 #myDIV2 {
