@@ -31,6 +31,17 @@ let onClick = function (e) {
 
 
 
+
+// let onClickCheck = (e)=>{
+//   if(e.target.parentNode.classList.contains('box-show')){
+//     return onClick ;
+//   }
+  
+// }
+
+
+
+
 const contentHtml = content.para;
 const keywords = content.keywords;
 
@@ -45,7 +56,7 @@ const listEl = el.getElementsByTagName("ul")[0];
       const matchedKeyWord = keywords.find((kw) => kw.key === word);
       if (matchedKeyWord) {
         word = word +
-          `<span class="checkbox"><input  class= "checkbox" type="checkbox"/><div class="box"><div class = "boxp">${matchedKeyWord.description}</div></div></span>`;
+          `<span class="checkbox"><input  class= "checkbox" type="radio"/><div class="box"><div class = "boxp">${matchedKeyWord.description}</div></div></span>`;
       }
       return word;
     })

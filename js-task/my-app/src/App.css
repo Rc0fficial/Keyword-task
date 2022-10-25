@@ -80,16 +80,18 @@ border: 1px solid #000000;
   cursor: pointer;
   transition: 0.3s all ease;
 } */
+
+
 .checkbox input:checked::before{
   background-color: red;
   border: 1px solid red;
 }
-.checkbox input:checked::after{
+/* .checkbox input:checked::after{
   position: absolute;
   background-color: red;
   color: red;
   
-}
+} */
 
 #myDIV2 {
   width: 50%;

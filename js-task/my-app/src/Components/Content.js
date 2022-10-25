@@ -1,9 +1,9 @@
 let content = {
-    para: `<p>A listing page is the public view of a listing. It should be designed to display all relevant information about a listing.</p>
+    para: `<p>A listing page is the public view of a listing. It should informations be designed to display all relevant information about a listing.</p>
           <p>Criteria:</p>
   
           <ul>
-              <li>A should be displaying all the information related to the listing that user has created.</li>
+              <li>A should be informations displaying all the information related to the listing that user has created.</li>
               <li>A listing page should only be visible to any user if the listing has status: Published.</li>
               <li>A listing page need to be SEO optimised to have meta tags for title, short description and image.</li>
               <li>A listings owners should be a link to their profile page, eg.&nbsp;<code>/profile/kansuler</code>&nbsp;if that user is owner of the project this listing is part of.</li>
@@ -17,8 +17,7 @@ let content = {
         description: "Facts provided or learned about something or someone.",
       },
       { key: "description", description: "Type something cool" },
-      { key: "owners", description: "Hi, I'm Arsalan!"},
-      { key: "page", description:"Damn!"}
+      
     ],
   };
   export default content;
